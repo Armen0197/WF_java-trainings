@@ -1,9 +1,10 @@
-package day_1_data_types_conditions;
+package day1.data.types.conditions;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
-import static day_1_data_types_conditions.Helpers.isInputDataValid;
-import static day_1_data_types_conditions.Helpers.getMathOperator;
+
+import static day1.data.types.conditions.Helpers.isInputDataValid;
+import static day1.data.types.conditions.Helpers.getMathOperator;
 
 public class DataTypesAndConditions {
 
@@ -14,7 +15,7 @@ public class DataTypesAndConditions {
         System.out.println("Enter the value by Fahrenheit: ");
         isInputDataValid(scanner);
         float fahrenheit = scanner.nextFloat();
-        return (fahrenheit - 32) * 5/9;
+        return (fahrenheit - 32) * 5 / 9;
     }
 
     /**
@@ -74,7 +75,11 @@ public class DataTypesAndConditions {
                 System.out.println("Result: " + (firstNum * secondNum));
                 break;
             case '/':
-                System.out.println("Result: " + (firstNum / secondNum));
+                try {
+                    System.out.println("Result: " + (firstNum / secondNum));
+                } catch (ArithmeticException e) {
+                    System.out.println("The entered data is incorrect! Check the second number.");
+                }
                 break;
             case '%':
                 System.out.println("Result: " + (firstNum % secondNum));
@@ -90,19 +95,19 @@ public class DataTypesAndConditions {
     public void distanceAndMiddlePointBetweenTwoCities(Scanner scanner) {
         System.out.println("Enter \"A\" city coordinates: ");
         isInputDataValid(scanner);
-        double x_a = scanner.nextDouble();
+        double x1 = scanner.nextDouble();
         isInputDataValid(scanner);
-        double y_a = scanner.nextDouble();
+        double y1 = scanner.nextDouble();
         System.out.println("Enter \"B\" city coordinates: ");
         isInputDataValid(scanner);
-        double x_b = scanner.nextDouble();
+        double x2 = scanner.nextDouble();
         isInputDataValid(scanner);
-        double y_b = scanner.nextDouble();
-        double distance = Math.sqrt(Math.pow((x_b - x_a), 2) + Math.pow((y_b - y_a), 2));
-        System.out.println("The distance between 2 cities: " +  new DecimalFormat( "#.#" ).format(distance) + " km.");
-        double x_c = (x_a + x_b) / 2;
-        double y_c = (y_a + y_b) / 2;
-        System.out.println("The middle point between 2 cities: X:(" + x_c + "), Y:(" + +y_c + ")");
+        double y2 = scanner.nextDouble();
+        double distance = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+        System.out.println("The distance between 2 cities: " + new DecimalFormat("#.#").format(distance) + " km.");
+        double x3 = (x1 + x2) / 2;
+        double y3 = (y1 + y2) / 2;
+        System.out.println("The middle point between 2 cities: X:(" + x3 + "), Y:(" + +y3 + ")");
     }
 
     /**
@@ -134,21 +139,15 @@ public class DataTypesAndConditions {
         isInputDataValid(scanner);
         double number = scanner.nextDouble();
         if (number == 0) {
-            System.out.print("Zero");
-        } else {
-
-            if (number > 0) {
-                System.out.println("Positive");
-            }
-            if (number < 0) {
-                System.out.println("Negative");
-            }
-            if (Math.abs(number) < 1) {
-                System.out.println("Small");
-            }
-            if (Math.abs(number) > 1_000_000) {
-                System.out.println("Large");
-            }
+            System.out.println("Zero");
+        } else if (number > 0) {
+            System.out.println("Positive");
+        } else if (number < 0) {
+            System.out.println("Negative");
+        } if (Math.abs(number) < 1) {
+            System.out.println("Small");
+        } else if (Math.abs(number) > 1_000_000) {
+            System.out.println("Large");
         }
     }
 

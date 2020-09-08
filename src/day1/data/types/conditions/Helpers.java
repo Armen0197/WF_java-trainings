@@ -1,4 +1,4 @@
-package day_1_data_types_conditions;
+package day1.data.types.conditions;
 
 import java.util.Scanner;
 
