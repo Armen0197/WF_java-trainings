@@ -3,8 +3,8 @@ package day1.data.types.conditions;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import static day1.data.types.conditions.Helpers.isInputDataValid;
-import static day1.data.types.conditions.Helpers.getMathOperator;
+import static Helpers.Helper.isInputDataValid;
+import static Helpers.Helper.getMathOperator;
 
 public class DataTypesAndConditions {
 
