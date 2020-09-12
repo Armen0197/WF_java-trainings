@@ -1,8 +1,8 @@
-package day1.data.types.conditions;
+package Helpers;
 
 import java.util.Scanner;
 
-public class Helpers {
+public class Helper {
 
     public static void isInputDataValid(Scanner scanner) {
         while (!scanner.hasNextDouble()) {
@@ -22,4 +22,12 @@ public class Helpers {
         }
         return operator.charAt(0);
     }
+
+    public static void isInputDataInteger(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            System.out.println("Enter only natural number: ");
+            scanner.next();
+        }
+    }
 }
+
